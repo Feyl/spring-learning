@@ -1,0 +1,2 @@
+# spring-learning
+Understand the core principles of Spring by writing a simplified version of the Spring framework. In the process of handwriting, Spring source code will be simplified, the core logic of the overall framework will be extracted, the code implementation process will be simplified, and the core functions will be retained, such as: IOC, AOP, Bean life cycle, context, scope, resource processing and other content implementation.
