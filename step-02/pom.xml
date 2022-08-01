@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.feyl</groupId>
-    <artifactId>step-01</artifactId>
+    <artifactId>step-02</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Implement a simple Bean container.
+        Using design pattern, the realization of Bean definition, registration, acquisition.
     </description>
 
     <dependencies>

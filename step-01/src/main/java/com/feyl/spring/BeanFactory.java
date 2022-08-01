@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * 代表了 Bean 对象的工厂，可以存放 Bean 定义到 Map 中以及获取。
+ *
  * @author Feyl
  */
 public class BeanFactory {
