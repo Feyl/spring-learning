@@ -1,9 +1,8 @@
-package com.feyl.spring.bean.factory.config;
+package com.feyl.spring.beans.factory.config;
 
 /**
  * @author Feyl
  */
-@SuppressWarnings({"rawtypes"})
 public class BeanDefinition {
 
     private Class beanClass;
@@ -12,7 +11,7 @@ public class BeanDefinition {
         this.beanClass = beanClass;
     }
 
-    public Class getBeanClass(){
+    public Class getBeanClass() {
         return beanClass;
     }
 

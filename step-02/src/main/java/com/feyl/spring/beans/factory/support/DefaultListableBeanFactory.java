@@ -1,8 +1,7 @@
-package com.feyl.spring.bean.factory.support;
+package com.feyl.spring.beans.factory.support;
 
-import com.feyl.spring.bean.BeanException;
-import com.feyl.spring.bean.factory.BeanFactory;
-import com.feyl.spring.bean.factory.config.BeanDefinition;
+import com.feyl.spring.beans.BeansException;
+import com.feyl.spring.beans.factory.config.BeanDefinition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,10 +19,10 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
     }
 
     @Override
-    protected BeanDefinition getBeanDefinition(String beanName) throws BeanException {
+    protected BeanDefinition getBeanDefinition(String beanName) throws BeansException {
         BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
         if (beanDefinition == null) {
-            throw new BeanException("No bean named '"+ beanName + "' is defined");
+            throw new BeansException("No bean named '"+ beanName + "' is defined");
         }
         return beanDefinition;
     }

@@ -1,6 +1,6 @@
 package com.feyl.spring;
 
-import com.feyl.spring.bean.UserService;
+import com.feyl.spring.beans.UserService;
 import org.junit.Test;
 
 /**

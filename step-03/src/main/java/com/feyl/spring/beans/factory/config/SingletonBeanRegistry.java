@@ -1,4 +1,4 @@
-package com.feyl.spring.bean.factory.config;
+package com.feyl.spring.beans.factory.config;
 
 /**
  * 单例注册表
@@ -8,4 +8,5 @@ package com.feyl.spring.bean.factory.config;
 public interface SingletonBeanRegistry {
 
     Object getSingleton(String beanName);
+
 }

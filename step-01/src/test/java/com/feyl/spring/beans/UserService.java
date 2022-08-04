@@ -1,4 +1,4 @@
-package com.feyl.spring.bean;
+package com.feyl.spring.beans;
 
 /**
  * @author Feyl

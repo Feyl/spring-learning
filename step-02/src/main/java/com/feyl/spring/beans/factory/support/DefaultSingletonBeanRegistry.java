@@ -1,6 +1,6 @@
-package com.feyl.spring.bean.factory.support;
+package com.feyl.spring.beans.factory.support;
 
-import com.feyl.spring.bean.factory.config.SingletonBeanRegistry;
+import com.feyl.spring.beans.factory.config.SingletonBeanRegistry;
 
 import java.util.HashMap;
 import java.util.Map;

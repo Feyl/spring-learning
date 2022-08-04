@@ -1,8 +1,8 @@
 package com.feyl.spring;
 
-import com.feyl.spring.bean.UserService;
-import com.feyl.spring.bean.factory.config.BeanDefinition;
-import com.feyl.spring.bean.factory.support.DefaultListableBeanFactory;
+import com.feyl.spring.beans.UserService;
+import com.feyl.spring.beans.factory.config.BeanDefinition;
+import com.feyl.spring.beans.factory.support.DefaultListableBeanFactory;
 import org.junit.Test;
 
 /**
