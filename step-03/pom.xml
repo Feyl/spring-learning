@@ -12,16 +12,21 @@
         Implementation of class instantiation strategy with constructor based on Cglib.
     </description>
 
+    <properties>
+        <cglib.version>3.3.0</cglib.version>
+        <junit.version>4.13.2</junit.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
-            <version>3.3.0</version>
+            <version>${cglib.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

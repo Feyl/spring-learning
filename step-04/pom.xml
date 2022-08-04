@@ -5,24 +5,36 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.feyl</groupId>
-    <artifactId>step-01</artifactId>
+    <artifactId>step-04</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Implement a simple Bean container.
+        Inject properties and functional implementations of dependent beans into Bean objects.
     </description>
 
     <properties>
+        <cglib.version>3.3.0</cglib.version>
+        <hutool.version>5.8.3</hutool.version>
         <junit.version>4.13.2</junit.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
 
+    </dependencies>
 </project>
