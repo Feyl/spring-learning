@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.feyl</groupId>
-    <artifactId>step-04</artifactId>
+    <artifactId>step-05</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Inject properties and functional implementations of dependent beans into Bean objects.
+        Design and implement a resource loader that parses and registers Bean objects from spring.xml.
     </description>
 
     <properties>
