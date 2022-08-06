@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * @author Feyl
  */
-public class SimpleInstantiationStrategy implements InstantiationStrategy {
+public class SimpleInstantiationStrategy implements InstantiationStrategy{
 
     @Override
     public Object instantiate(BeanDefinition beanDefinition, String beanName, Constructor constructor, Object[] args) throws BeansException {

@@ -7,8 +7,8 @@ import com.feyl.spring.beans.factory.config.BeanDefinition;
 import com.feyl.spring.beans.factory.config.BeanReference;
 import com.feyl.spring.beans.factory.support.DefaultListableBeanFactory;
 import com.feyl.spring.beans.factory.xml.XmlBeanDefinitionReader;
-import com.feyl.spring.core.io.DefaultResourceLoader;
-import com.feyl.spring.core.io.Resource;
+import com.feyl.spring.util.io.DefaultResourceLoader;
+import com.feyl.spring.util.io.Resource;
 import com.feyl.spring.test.bean.UserDao;
 import com.feyl.spring.test.bean.UserService;
 import org.junit.Before;
@@ -91,6 +91,4 @@ public class ApiTest {
         String result = userService.queryUserInfo();
         System.out.println("测试结果：" + result);
     }
-
-
 }

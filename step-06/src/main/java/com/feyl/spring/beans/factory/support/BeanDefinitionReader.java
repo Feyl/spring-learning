@@ -1,8 +1,8 @@
 package com.feyl.spring.beans.factory.support;
 
 import com.feyl.spring.beans.BeansException;
-import com.feyl.spring.util.io.Resource;
-import com.feyl.spring.util.io.ResourceLoader;
+import com.feyl.spring.core.io.Resource;
+import com.feyl.spring.core.io.ResourceLoader;
 
 /**
  * @author Feyl
@@ -18,4 +18,6 @@ public interface BeanDefinitionReader {
     void loadBeanDefinitions(Resource... resources) throws BeansException;
 
     void loadBeanDefinitions(String location) throws BeansException;
+
+    void loadBeanDefinitions(String... locations) throws BeansException;
 }

@@ -1,16 +1,16 @@
 package com.feyl.spring.beans.factory.support;
 
-import com.feyl.spring.util.io.DefaultResourceLoader;
-import com.feyl.spring.util.io.ResourceLoader;
+import com.feyl.spring.core.io.DefaultResourceLoader;
+import com.feyl.spring.core.io.ResourceLoader;
 
 /**
  * @author Feyl
  */
-public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader{
+public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader {
 
     private final BeanDefinitionRegistry registry;
 
-    private ResourceLoader resourceLoader;
+    private final ResourceLoader resourceLoader;
 
     protected AbstractBeanDefinitionReader(BeanDefinitionRegistry registry) {
         this(registry, new DefaultResourceLoader());

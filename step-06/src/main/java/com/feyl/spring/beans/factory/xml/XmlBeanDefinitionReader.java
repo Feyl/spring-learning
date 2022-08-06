@@ -8,8 +8,8 @@ import com.feyl.spring.beans.factory.config.BeanDefinition;
 import com.feyl.spring.beans.factory.config.BeanReference;
 import com.feyl.spring.beans.factory.support.AbstractBeanDefinitionReader;
 import com.feyl.spring.beans.factory.support.BeanDefinitionRegistry;
-import com.feyl.spring.util.io.Resource;
-import com.feyl.spring.util.io.ResourceLoader;
+import com.feyl.spring.core.io.Resource;
+import com.feyl.spring.core.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -53,6 +53,13 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
         loadBeanDefinitions(resource);
     }
 
+    @Override
+    public void loadBeanDefinitions(String... locations) throws BeansException {
+        for (String location : locations) {
+            loadBeanDefinitions(location);
+        }
+    }
+
     protected void doLoadBeanDefinitions(InputStream inputStream) throws ClassNotFoundException {
         Document doc = XmlUtil.readXML(inputStream);
         Element root = doc.getDocumentElement();
@@ -82,7 +89,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             // 读取属性并填充
             for (int j = 0; j < bean.getChildNodes().getLength(); j++) {
                 if (!(bean.getChildNodes().item(j) instanceof Element)) continue;
-                if(!"property".equals(bean.getChildNodes().item(j).getNodeName())) continue;
+                if (!"property".equals(bean.getChildNodes().item(j).getNodeName())) continue;
                 // 解析标签：property
                 Element property = (Element) bean.getChildNodes().item(j);
                 String attrName = property.getAttribute("name");
@@ -101,7 +108,4 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             getRegistry().registerBeanDefinition(beanName, beanDefinition);
         }
     }
-
-
-
 }

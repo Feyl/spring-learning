@@ -17,11 +17,11 @@ public class ClassPathResource implements Resource{
     private ClassLoader classLoader;
 
     public ClassPathResource(String path) {
-        this(path, null);
+        this(path, (ClassLoader) null);
     }
 
     public ClassPathResource(String path, ClassLoader classLoader) {
-        Assert.notNull(path, "Path must not be null");
+        Assert.notNull(path, "Path not be null");
         this.path = path;
         this.classLoader = classLoader != null ? classLoader : ClassUtil.getDefaultClassLoader();
     }
@@ -30,8 +30,8 @@ public class ClassPathResource implements Resource{
     public InputStream getInputStream() throws IOException {
         InputStream inputStream = classLoader.getResourceAsStream(path);
         if (inputStream == null) {
-            throw  new FileNotFoundException(
-                    this.path + "cannot be opened because it does not exist");
+            throw new FileNotFoundException(
+                    this.path + " cannot be opened because it does not exist");
         }
         return inputStream;
     }
