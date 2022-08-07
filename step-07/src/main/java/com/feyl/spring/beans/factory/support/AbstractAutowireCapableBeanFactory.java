@@ -95,11 +95,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         // 1. 执行 BeanPostProcessor Before 处理
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
 
+        // 执行 Bean 对象的初始化方法
         try {
-            // 待完成内容：invokeInitMethods(beanName, wrappedBean, beanDefinition);
             invokeInitMethods(beanName, wrappedBean, beanDefinition);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new BeansException("Invocation of init method of bean[" + beanName + "] failed", e);
         }
 
         // 2. 执行 BeanPostProcessor After 处理
