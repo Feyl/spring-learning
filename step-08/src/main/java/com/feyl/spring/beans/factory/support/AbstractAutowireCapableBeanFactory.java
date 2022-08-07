@@ -5,8 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import com.feyl.spring.beans.BeansException;
 import com.feyl.spring.beans.PropertyValue;
 import com.feyl.spring.beans.PropertyValues;
-import com.feyl.spring.beans.factory.DisposableBean;
-import com.feyl.spring.beans.factory.InitializingBean;
+import com.feyl.spring.beans.factory.*;
 import com.feyl.spring.beans.factory.config.AutowireCapableBeanFactory;
 import com.feyl.spring.beans.factory.config.BeanDefinition;
 import com.feyl.spring.beans.factory.config.BeanPostProcessor;
@@ -16,6 +15,11 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 /**
+ * Abstract bean factory superclass that implements default bean creation,
+ * with the full capabilities specified by the class.
+ * Implements the {@link AutowireCapableBeanFactory}
+ * interface in addition to AbstractBeanFactory's {@link #createBean} method.
+ *
  * @author Feyl
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory implements AutowireCapableBeanFactory {
@@ -87,11 +91,24 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     }
 
     private Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition) {
+
+        // invokeAwareMethods
+        if (bean instanceof Aware) {
+            if (bean instanceof BeanFactoryAware) {
+                ((BeanFactoryAware) bean).setBeanFactory(this);
+            }
+            if (bean instanceof BeanClassLoaderAware) {
+                ((BeanClassLoaderAware) bean).setBeanClassLoader(getBeanClassLoader());
+            }
+            if (bean instanceof BeanNameAware) {
+                ((BeanNameAware) bean).setBeanName(beanName);
+            }
+        }
+
         // 1. 执行 BeanPostProcessor Before 处理
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
 
         try {
-            // 待完成内容：invokeInitMethods(beanName, wrappedBean, beanDefinition);
             invokeInitMethods(beanName, wrappedBean, beanDefinition);
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -12,6 +12,11 @@ import com.feyl.spring.beans.factory.config.BeanReference;
 import java.lang.reflect.Constructor;
 
 /**
+ * Abstract bean factory superclass that implements default bean creation,
+ * with the full capabilities specified by the class.
+ * Implements the {@link AutowireCapableBeanFactory}
+ * interface in addition to AbstractBeanFactory's {@link #createBean} method.
+ *
  * @author Feyl
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory implements AutowireCapableBeanFactory {
