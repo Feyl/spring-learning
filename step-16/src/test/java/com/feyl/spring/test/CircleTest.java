@@ -35,7 +35,6 @@ public class CircleTest {
         }
         return (T) obj;
     }
-
 }
 
 class A {
