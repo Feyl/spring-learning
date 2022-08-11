@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        对象实例化策略。
+        基于Cglib实现含构造函数的类实例化策略。
     </description>
 
     <properties>
