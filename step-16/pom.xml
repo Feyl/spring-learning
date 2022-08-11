@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        The three-level cache handles cyclic dependencies.
+        三级缓存处理循环依赖。
     </description>
 
 
