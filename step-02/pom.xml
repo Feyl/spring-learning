@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Using design pattern, the realization of Bean definition, registration, acquisition.
+        实现 Bean 的定义、注册、获取。
     </description>
 
     <properties>
