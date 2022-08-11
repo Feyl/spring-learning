@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Registration of Bean objects is accomplished through annotation configuration and automatic package scanning.
+        通过注解配置和包自动扫描的方式完成Bean对象的注册。
     </description>
 
     <properties>

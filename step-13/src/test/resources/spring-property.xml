@@ -6,7 +6,7 @@
 	         http://www.springframework.org/schema/beans/spring-beans.xsd
 		 http://www.springframework.org/schema/context">
 
-    <bean class="com.feyl.PropertyPlaceholderConfigurer">
+    <bean class="com.feyl.spring.beans.factory.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:token.properties"/>
     </bean>
 
