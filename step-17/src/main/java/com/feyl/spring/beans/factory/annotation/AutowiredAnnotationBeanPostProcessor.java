@@ -1,12 +1,14 @@
 package com.feyl.spring.beans.factory.annotation;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.TypeUtil;
 import com.feyl.spring.beans.BeansException;
 import com.feyl.spring.beans.PropertyValues;
 import com.feyl.spring.beans.factory.BeanFactory;
 import com.feyl.spring.beans.factory.BeanFactoryAware;
 import com.feyl.spring.beans.factory.ConfigurableListableBeanFactory;
 import com.feyl.spring.beans.factory.config.InstantiationAwareBeanPostProcessor;
+import com.feyl.spring.core.convert.ConversionService;
 import com.feyl.spring.util.ClassUtil;
 
 import java.lang.reflect.Field;
@@ -34,8 +36,19 @@ public class AutowiredAnnotationBeanPostProcessor implements InstantiationAwareB
         for (Field field : declaredFields) {
             Value valueAnnotation = field.getAnnotation(Value.class);
             if (valueAnnotation != null) {
-                String value = valueAnnotation.value();
-                value = beanFactory.resolveEmbeddedValue(value);
+                Object value = valueAnnotation.value();
+                value = beanFactory.resolveEmbeddedValue((String) value);
+
+                // 类型转换
+                Class<?> sourceType = value.getClass();
+                Class<?> targetType = (Class<?>) TypeUtil.getType(field);
+                ConversionService conversionService = beanFactory.getConversionService();
+                if (conversionService != null) {
+                    if (conversionService.canConvert(sourceType, targetType)) {
+                        value = conversionService.convert(value, targetType);
+                    }
+                }
+
                 BeanUtil.setFieldValue(bean, field.getName(), value);
             }
         }

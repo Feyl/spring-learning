@@ -2,7 +2,9 @@ package com.feyl.spring.beans.factory.config;
 
 import com.feyl.spring.beans.factory.BeanFactory;
 import com.feyl.spring.beans.factory.HierarchicalBeanFactory;
+import com.feyl.spring.core.convert.ConversionService;
 import com.feyl.spring.util.StringValueResolver;
+import com.sun.istack.internal.Nullable;
 
 /**
  * Configuration interface to be implemented by most bean factories. Provides
@@ -39,4 +41,18 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
      * @since 3.0
      */
     String resolveEmbeddedValue(String value);
+
+    /**
+     * 返回关联的 ConversionService（如果有）。
+     * @since 3.0
+     */
+    @Nullable
+    ConversionService getConversionService();
+
+    /**
+     * 指定一个 Spring 3.0 ConversionService 用于转换属性值，
+     * 作为 JavaBeans PropertyEditors 的替代方法。
+     * @since 3.0
+     */
+    void setConversionService(ConversionService conversionService);
 }

@@ -5,6 +5,7 @@ import com.feyl.spring.beans.factory.FactoryBean;
 import com.feyl.spring.beans.factory.config.BeanDefinition;
 import com.feyl.spring.beans.factory.config.BeanPostProcessor;
 import com.feyl.spring.beans.factory.config.ConfigurableBeanFactory;
+import com.feyl.spring.core.convert.ConversionService;
 import com.feyl.spring.util.ClassUtil;
 import com.feyl.spring.util.StringValueResolver;
 
@@ -32,6 +33,8 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
      * 要应用的字符串解析器，例如注释属性值
      */
     private final List<StringValueResolver> embeddedValueResolvers = new ArrayList<>();
+
+    private ConversionService conversionService;
 
     @Override
     public Object getBean(String name) throws BeansException {
@@ -107,4 +110,16 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
     public ClassLoader getBeanClassLoader() {
         return this.beanClassLoader;
     }
+
+
+    @Override
+    public ConversionService getConversionService() {
+        return conversionService;
+    }
+
+    @Override
+    public void setConversionService(ConversionService conversionService) {
+        this.conversionService = conversionService;
+    }
+
 }
