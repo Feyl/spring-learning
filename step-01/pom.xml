@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        创建简单的 Bean 容器。
+        实现一个简单的Bean容器。
     </description>
 
     <properties>
