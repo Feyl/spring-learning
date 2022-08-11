@@ -10,4 +10,4 @@ Understand the core principles of Spring by writing a simplified version of the 
 以后会随着学习的深入对内容进行扩充...
 
 
-致谢原仓库作者 **小傅哥** “让我们站在巨人的肩膀上” 学到更多的知识
+致谢原仓库作者 **小傅哥** 让我们 “站在巨人的肩膀上” 学到更多的知识
