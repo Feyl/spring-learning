@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Inject properties and functional implementations of dependent beans into Bean objects.
+        注入属性和依赖对象。
     </description>
 
     <properties>
