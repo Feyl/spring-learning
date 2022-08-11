@@ -3,15 +3,15 @@
 
     <bean id="userService" class="com.feyl.spring.test.bean.UserService"/>
 
-    <bean class="com.feyl.DefaultAdvisorAutoProxyCreator"/>
+    <bean class="com.feyl.spring.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
 
     <bean id="beforeAdvice" class="com.feyl.spring.test.bean.UserServiceBeforeAdvice"/>
 
-    <bean id="methodInterceptor" class="com.feyl.MethodBeforeAdviceInterceptor">
+    <bean id="methodInterceptor" class="com.feyl.spring.aop.framework.adapter.MethodBeforeAdviceInterceptor">
         <property name="advice" ref="beforeAdvice"/>
     </bean>
 
-    <bean id="pointcutAdvisor" class="com.feyl.AspectJExpressionPointcutAdvisor">
+    <bean id="pointcutAdvisor" class="com.feyl.spring.aop.aspectj.AspectJExpressionPointcutAdvisor">
         <property name="expression" value="execution(* com.feyl.spring.test.bean.IUserService.*(..))"/>
         <property name="advice" ref="methodInterceptor"/>
     </bean>
