@@ -4,3 +4,7 @@ Understand the core principles of Spring by writing a simplified version of the 
 原仓库连接：https://github.com/fuzhengwei/small-spring
 
 原文档连接：https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIxMDAwMDAxMw==&action=getalbum&album_id=1871634116341743621
+
+待完成：spring-jdbc、数据库事务相关内容...
+
+以后会随着学习的深入对内容进行扩充...
