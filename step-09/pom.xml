@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        About Bean object scope and the implementation and use of FactoryBeans.
+        关于Bean对象作用域以及FactoryBean的实现和使用。
     </description>
 
     <properties>
