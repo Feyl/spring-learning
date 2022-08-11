@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Observer based implementation, container events and event listeners.
+        基于观察者实现，容器事件和事件监听器。
     </description>
 
     <properties>
