@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        应用上下文。
+        实现应用上下文，自动识别、资源加载、扩展机制。
     </description>
 
     <properties>
