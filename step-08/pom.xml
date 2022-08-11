@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <description>
-        Defines the markup type Aware interface that implements the Aware container object.
+        定义标记类型Aware接口，实现感知容器对象。
     </description>
 
     <properties>
