@@ -1,4 +1,4 @@
-package com.feyl.spring.util.io;
+package com.feyl.spring.core.io;
 
 import java.io.IOException;
 import java.io.InputStream;

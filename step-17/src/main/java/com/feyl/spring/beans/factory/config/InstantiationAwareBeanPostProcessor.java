@@ -16,7 +16,7 @@ public interface InstantiationAwareBeanPostProcessor extends BeanPostProcessor {
      * 在目标 bean 被实例化之前应用这个 BeanPostProcessor。
      * 返回的 bean 对象可能是使用的代理，而不是目标 bean，有效地抑制了目标 bean 的默认实例化。
      *
-     * 在 Bean 对象执行初始化方法之前，执行此方法
+     * 在 Bean 对象执行实例化方法之前，执行此方法
      */
     Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException;
 
@@ -26,7 +26,7 @@ public interface InstantiationAwareBeanPostProcessor extends BeanPostProcessor {
      * 这是对给定 bean 实例执行字段注入的理想回调。
      * 典型例子见 Spring 自己的 {@link AutowiredAnnotationBeanPostProcessor}。
      *
-     * 在 Bean 对象执行初始化方法之后，执行此方法
+     * 在 Bean 对象执行实例化方法之后，执行此方法
      */
     boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException;
 

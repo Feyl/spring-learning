@@ -1,4 +1,4 @@
-package com.feyl.spring.util.io;
+package com.feyl.spring.core.io;
 
 import cn.hutool.core.lang.Assert;
 import com.feyl.spring.util.ClassUtil;

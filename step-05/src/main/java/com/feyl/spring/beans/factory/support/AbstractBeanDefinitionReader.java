@@ -1,7 +1,7 @@
 package com.feyl.spring.beans.factory.support;
 
-import com.feyl.spring.util.io.DefaultResourceLoader;
-import com.feyl.spring.util.io.ResourceLoader;
+import com.feyl.spring.core.io.DefaultResourceLoader;
+import com.feyl.spring.core.io.ResourceLoader;
 
 /**
  * @author Feyl

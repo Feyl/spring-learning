@@ -1,4 +1,4 @@
-package com.feyl.spring.util.io;
+package com.feyl.spring.core.io;
 
 import java.io.File;
 import java.io.FileInputStream;

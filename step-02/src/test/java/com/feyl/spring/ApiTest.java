@@ -22,7 +22,6 @@ public class ApiTest {
         userService.queryUserInfo();
         // 4.第二次获取 bean from singleton
         UserService userService_singleton = (UserService) beanFactory.getSingleton("userService");
-    userService_singleton.queryUserInfo();
-
+        userService_singleton.queryUserInfo();
     }
 }
